@@ -1,11 +1,29 @@
 import React from 'react';
 
 const Form = () => {
-    const handleSubmit=event=>{
+    const handleSubmit = event => {
         event.preventDefault();
-        const name=event.target.name.value;
-        const email=event.target.email.value;
-        console.log({name,email});
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        // console.log(name,email)
+        const data={name,email};
+        event.target.reset();
+        // fetch data below
+        fetch('http://localhost:5000/user', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
     }
     return (
         <div>
