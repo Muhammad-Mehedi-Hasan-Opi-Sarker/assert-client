@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
 
 const Form = () => {
 
@@ -11,6 +12,7 @@ const Form = () => {
         fetch(url).then(res => res.json()).then(data => setData(data))
     }, [reload])
 
+    // data for delete 
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure')
         if (proceed) {
@@ -25,6 +27,9 @@ const Form = () => {
                 })
         }
     }
+
+    // data for update 
+ 
 
     // form data 
     const handleSubmit = event => {
@@ -60,14 +65,13 @@ const Form = () => {
             <h1 className='text-2xl font-bold text-primary mb-4'>Submit Your Data</h1>
             <div class="overflow-x-auto">
                 <table class="table w-full">
-
                     <thead>
                         <tr>
                             <th></th>
                             <th>Name</th>
                             <th>Email</th>
                             <th></th>
-
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -76,11 +80,10 @@ const Form = () => {
                                 <th>{index + 1}</th>
                                 <td>{data.name}</td>
                                 <td>{data.email}</td>
+                                <td><Link to={`/update/${data._id}`}><button className='btn bg-danger'>Update</button></Link></td>
                                 <td><button onClick={() => handleDelete(data._id)} className='btn bg-danger'>Delete</button></td>
                             </tr>)
                         }
-
-
                     </tbody>
                 </table>
             </div>
