@@ -9,7 +9,7 @@ const UserData = () => {
     }, [reload]) */
     return (
         <div>
-            <h1 className='text-2xl font-bold text-primary'>Submit Your Data</h1>
+            {/* <h1 className='text-2xl font-bold text-primary'>Submit Your Data</h1> */}
             {/* <div class="overflow-x-auto">
                 <table class="table w-full">
 
