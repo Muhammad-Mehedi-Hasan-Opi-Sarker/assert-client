@@ -5,7 +5,7 @@ const Update = () => {
     const [reload,setReload]=useState(false);
     const [data,setData]=useState({});
     useEffect(()=>{
-        fetch(`https://guarded-scrubland-45318.herokuapp.com/userg/${id}`)
+        fetch(`https://guarded-scrubland-45318.herokuapp.com/user/${id}`)
         .then(res=>res.json()).then(data=>setData(data));
     },[reload])
 
@@ -20,7 +20,7 @@ const Update = () => {
         // fetch data below
         const url=`https://guarded-scrubland-45318.herokuapp.com/user/${id}`
         fetch(url, {
-            method: 'PUT', // or 'PUT'
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
