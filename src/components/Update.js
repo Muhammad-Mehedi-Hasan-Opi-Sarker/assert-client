@@ -36,7 +36,7 @@ const Update = () => {
     return (
         <div>
             <h1 className='2xl font-bold'>{data.name}</h1>
-            <h1 className='2xl font-bold'>{data.email}</h1>
+            <h1 className='2xl font-bold mb-5'>{data.email}</h1>
             <form className='mb-4' onSubmit={handleUpdate}>
                 <input type="text" required placeholder="Type Your Name" name='name' className="input input-bordered input-primary w-full max-w-xs mb-4" /><br />
                 <input type="email" required placeholder="Type Your Email" name='email' className="input input-bordered input-primary w-full max-w-xs mb-4" /><br />
