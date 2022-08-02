@@ -5,7 +5,7 @@ const Update = () => {
     const [reload,setReload]=useState(false);
     const [data,setData]=useState({});
     useEffect(()=>{
-        fetch(`https://guarded-scrubland-45318.herokuapp.com/user/${id}`)
+        fetch(`https://guarded-scrubland-45318.herokuapp.com/userg/${id}`)
         .then(res=>res.json()).then(data=>setData(data));
     },[reload])
 
