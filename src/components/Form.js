@@ -8,7 +8,7 @@ const Form = () => {
     const [allData, setData] = useState([]);
     const [reload, setReload] = useState(false);
     useEffect(() => {
-        const url = `http://localhost:5000/user`;
+        const url = `https://guarded-scrubland-45318.herokuapp.com/user`;
         fetch(url).then(res => res.json()).then(data => setData(data))
     }, [reload])
 
@@ -16,7 +16,7 @@ const Form = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure')
         if (proceed) {
-            const url = `http://localhost:5000/user/${id}`;
+            const url = `https://guarded-scrubland-45318.herokuapp.com/user/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -40,7 +40,7 @@ const Form = () => {
         const data = { name, email };
         event.target.reset();
         // fetch data below
-        fetch('http://localhost:5000/user', {
+        fetch('https://guarded-scrubland-45318.herokuapp.com/user', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ const Form = () => {
             </form>
             {/* Table Data  */}
             <h1 className='text-2xl font-bold text-primary mb-4'>Submit Your Data</h1>
-            <div class="overflow-x-auto">
+            <div id='data' class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>
                         <tr>

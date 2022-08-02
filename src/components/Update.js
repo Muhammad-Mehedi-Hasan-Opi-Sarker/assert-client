@@ -5,7 +5,7 @@ const Update = () => {
     const [reload,setReload]=useState(false);
     const [data,setData]=useState({});
     useEffect(()=>{
-        fetch(`http://localhost:5000/user/${id}`)
+        fetch(`https://guarded-scrubland-45318.herokuapp.com/user/${id}`)
         .then(res=>res.json()).then(data=>setData(data));
     },[reload])
 
@@ -18,7 +18,7 @@ const Update = () => {
         const data = { name, email };
         event.target.reset();
         // fetch data below
-        const url=`http://localhost:5000/user/${id}`
+        const url=`https://guarded-scrubland-45318.herokuapp.com/user/${id}`
         fetch(url, {
             method: 'PUT', // or 'PUT'
             headers: {
