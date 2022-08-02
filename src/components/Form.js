@@ -62,7 +62,7 @@ const Form = () => {
                 <input type="submit" className='btn btn-primary' value="Submit" />
             </form>
             {/* Table Data  */}
-            <h1 className='text-2xl font-bold text-primary mb-4'>Submit Your Data</h1>
+            <h1 className='text-2xl font-bold text-primary mb-4'>See Submited Your Data</h1>
             <div id='data' class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>
